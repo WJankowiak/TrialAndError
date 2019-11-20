@@ -1,0 +1,3 @@
+﻿  test.cpp
+C:\Users\jaana\source\repos\Graph\ut_graph\test.cpp(4,8): warning C4101: 'g': unreferenced local variable
+  ut_graph.vcxproj -> C:\Users\jaana\source\repos\Graph\Debug\ut_graph.exe
