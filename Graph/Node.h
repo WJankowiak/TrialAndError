@@ -7,10 +7,16 @@ class Node
 
 public:
 	Node(int id);
-	Point GetPosition();
+	Node(int id, const Point p);
+	~Node() = default;
+	Point getPosition() const;
 	void setPosition(int x, int y);
 	void setPosition(Point p);
-	int getId;
+	int getId() const;
+	double calculateDistance(Node n) const;
+	bool operator==(const Node n1) const {
+		return id == n1.getId();
+	}
 
 };
 
