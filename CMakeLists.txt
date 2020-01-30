@@ -1,8 +1,10 @@
 project (Tests)
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.13.0)
+
+find_package(GTest REQUIRED)
+set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(Graph)
-add_subdirectory(googletest)
 
 add_executable(Tests ut_graph/main.cpp)
 
@@ -15,11 +17,9 @@ target_sources(Tests
                 ut_graph/ut_node.h
                 ut_graph/ut_point.h
                 )
-target_link_libraries(Tests Graph_lib)
-target_link_libraries(Tests googletest)
-
-target_include_directories(Tests PUBLIC
-                          "${PROJECT_BINARY_DIR}"
-                          "${PROJECT_SOURCE_DIR}/Graph"
-                          "${PROJECT_SOURCE_DIR}/googletest"
-                          )
+target_link_libraries(Tests
+    PRIVATE
+        Graph_lib
+        GTest::GTest
+        GTest::Main
+)

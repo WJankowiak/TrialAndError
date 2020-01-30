@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include "Node.h"
 
+#include <math.h>
 namespace constant {
 	const int dummyId = 1;
 	const Point dummyPoint = Point(1, 1);

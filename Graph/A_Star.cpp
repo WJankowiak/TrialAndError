@@ -1,4 +1,5 @@
 #include "A_Star.h"
+#include <limits.h>
 #include <list>
 std::vector<Node> A_Star::getPath(const Node& from, const Node& to, const Graph& g)
 {
